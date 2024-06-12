@@ -1,3 +1,6 @@
+var humanScore = 0;
+var computerScore = 0;
+
 function getComputerChoice() {
   let computer_choice = "";
   let random_number = Math.random();
