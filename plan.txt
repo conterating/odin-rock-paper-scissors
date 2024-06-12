@@ -1,0 +1,26 @@
+Task: Create a program that takes input froma user:
+rock, paper, or scissors and randomly chooses and input
+for the computer. The program should compare between the
+user's inputted choice and the computer's randomly set of choice.
+Rock will beat scissors, scissors will beat paper, and paper will beat rock.
+
+
+-Program does not have a UI and will be purely through the console
+-The user will enter data
+-The desired output will be the winner over 5 rounds of the game
+
+Pseudocode:
+
+When the user inputs a choice
+Randomly select a choice for the computer
+Initialize a counter that starts at zero that counts the amount of
+Initialize a counter that counts the amount of user wins
+Initialize a counter that counts the amount of computer wins
+Compare the choice of the user and 
+Increase the round counter by one
+If the user wins increase the user win counter by one
+If the computer wins increase the computer win counter by one
+Else if there is a tie keep both counters the same
+Display a message that shows the result of the round
+Loop this process until the round counter equals five
+Display the results for the round
