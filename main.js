@@ -61,12 +61,4 @@ function playRound() {
   console.log(computerScore);
 }
 
-function playGame() {
-  for (let roundScore = 0; roundScore < 5; roundScore++) {
-    playRound();
-    getHumanChoice();
-    getComputerChoice();
-  }
-}
-
-playGame();
+playRound();
