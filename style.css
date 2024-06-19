@@ -1,0 +1,10 @@
+.choice-container {
+  display: flex;
+  gap: 15px;
+}
+
+.choices {
+  width: 200px;
+  height: 200px;
+  flex-grow: 1;
+}

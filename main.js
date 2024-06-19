@@ -1,18 +1,24 @@
-//rock button
-const rockButton = document.createElement("button");
-//paper button
-const paperButton = document.createElement("button");
-//scissors button
-const scissorsButton = document.createElement("button");
+const choicesContainer = document.createElement("div");
+choicesContainer.classList.add("choice-container");
 
-rockButton.textContent = "Rock";
-document.body.appendChild(rockButton);
+//rock image + rock button
+const rock = document.createElement("input");
+rock.setAttribute("type", "image");
+rock.setAttribute("src", "images/rock.jpg");
+rock.classList.add("choices");
+//paper image + button
+const paper = document.createElement("input");
+paper.setAttribute("type", "image");
+paper.setAttribute("src", "images/paper.jpg");
+paper.classList.add("choices");
+//scissors image + button
+const scissors = document.createElement("input");
+scissors.setAttribute("type", "image");
+scissors.setAttribute("src", "images/scissors.jpg");
+scissors.classList.add("choices");
 
-paperButton.textContent = "Paper";
-document.body.appendChild(paperButton);
-
-scissorsButton.textContent = "Scissors";
-document.body.appendChild(scissorsButton);
+choicesContainer.append(rock, paper, scissors);
+document.body.append(choicesContainer);
 
 //randomly selects a choice for the computer
 function getComputerChoice() {
