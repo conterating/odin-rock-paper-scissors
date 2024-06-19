@@ -1,3 +1,19 @@
+//rock button
+const rockButton = document.createElement("button");
+//paper button
+const paperButton = document.createElement("button");
+//scissors button
+const scissorsButton = document.createElement("button");
+
+rockButton.textContent = "Rock";
+document.body.appendChild(rockButton);
+
+paperButton.textContent = "Paper";
+document.body.appendChild(paperButton);
+
+scissorsButton.textContent = "Scissors";
+document.body.appendChild(scissorsButton);
+
 //randomly selects a choice for the computer
 function getComputerChoice() {
   let computerChoice = "";
@@ -17,7 +33,7 @@ function getHumanChoice() {
   let humanInput = prompt("Rock, Paper, or Scissors?");
   return humanInput.toLowerCase();
 }
-
+/*
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
@@ -52,11 +68,9 @@ function playGame() {
       console.log("Tie!!!!");
     }
   }
-  for (let i = 0; i < 5; i++) {
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
-  }
+  humanSelection = getHumanChoice();
+  computerSelection = getComputerChoice();
+  playRound(humanSelection, computerSelection);
 
   if (humanScore > computerScore) {
     console.log(
@@ -70,3 +84,4 @@ function playGame() {
 }
 
 playGame();
+*/
