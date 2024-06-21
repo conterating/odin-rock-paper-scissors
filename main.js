@@ -23,10 +23,10 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
+  const div = document.querySelector("#winner-text");
   let humanScore = 0;
   let computerScore = 0;
-  const div = document.createElement("div");
-  const body = document.body;
+
   //humanChoice = computerChoice -> tie
   if (humanChoice == computerChoice) {
     div.textContent = `It's a tie! You both chose ${humanChoice}`;
@@ -38,10 +38,16 @@ function playRound(humanChoice, computerChoice) {
     (humanChoice == "Scissors" && computerChoice == "Paper")
   ) {
     div.textContent = `You won! ${humanChoice} beats ${computerChoice}!`;
+    humanScore++;
   } else {
     div.textContent = `You lost! ${computerChoice} beats ${humanChoice}!`;
+    computerScore++;
   }
-  body.append(div);
+  document.body.appendChild(div);
+}
+
+function clearBox(elementId) {
+  document.getElementById(elementId).innerHTML = "";
 }
 
 function playGame() {
