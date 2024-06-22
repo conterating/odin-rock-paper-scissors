@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 // random computer choice to make the game more realistic
 function getComputerChoice() {
   let computerChoice;
@@ -19,17 +22,18 @@ function getHumanChoice() {
   container.addEventListener("click", (e) => {
     humanChoice = e.target.textContent;
     playRound(humanChoice, getComputerChoice());
+    gameFinished();
   });
 }
 
 function playRound(humanChoice, computerChoice) {
-  const div = document.querySelector("#winner-text");
-  let humanScore = 0;
-  let computerScore = 0;
+  const div = document.querySelector(".winner-round");
+  let roundWinner;
 
   //humanChoice = computerChoice -> tie
   if (humanChoice == computerChoice) {
     div.textContent = `It's a tie! You both chose ${humanChoice}`;
+    roundWinner = "tie";
   }
   //human win scenarios
   else if (
@@ -38,16 +42,40 @@ function playRound(humanChoice, computerChoice) {
     (humanChoice == "Scissors" && computerChoice == "Paper")
   ) {
     div.textContent = `You won! ${humanChoice} beats ${computerChoice}!`;
+    roundWinner = "human";
     humanScore++;
   } else {
     div.textContent = `You lost! ${computerChoice} beats ${humanChoice}!`;
+    roundWinner = "computer";
     computerScore++;
   }
   document.body.appendChild(div);
 }
 
-function clearBox(elementId) {
-  document.getElementById(elementId).innerHTML = "";
+function clearBox(elementClass) {
+  document.querySelector(elementClass).innerHTML = "";
+}
+
+function gameFinished() {
+  if (humanScore === 5 || computerScore === 5) {
+    gameOver();
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function gameOver() {
+  let winnerMessage = document.querySelector(".winner-message");
+  switch (true) {
+    case humanScore === 5:
+      winnerMessage.textContent = "You Won!!!!";
+      break;
+    case computerScore === 5:
+      winnerMessage.textContent = "Computer Won... :(";
+      break;
+  }
+  document.body.append(winnerMessage);
 }
 
 function playGame() {
